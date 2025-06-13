@@ -1,0 +1,7 @@
+{
+  "name": "ShopSmarter: AI Personal Shopper",
+  "description": "An AI-powered personal shopping assistant that analyzes uploaded images to recommend similar or complementary products, allows chat-based refinement, and simulates a checkout process.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
