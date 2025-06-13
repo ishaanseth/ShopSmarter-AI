@@ -1,6 +1,6 @@
 # ShopSmarter: AI Personal Shopper
 
-**Live Application Link (Hosted on Google Cloud Run):** https://shopsmarter-ai-personal-shopper-570474786910.us-west1.run.app
+**Live Application Link (Hosted on Google Cloud Run):** [Link To App](https://shopsmarter-ai-personal-shopper-570474786910.us-west1.run.app)
 
 Welcome to ShopSmarter AI! This application is an intelligent personal shopping assistant designed to help you discover products based on visual inspiration. Upload an image, and our AI will analyze it to suggest similar items and complementary products. You can then chat with the AI to refine your search, ask for alternatives, or get style advice.
 
