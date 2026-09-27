@@ -1,7 +1,5 @@
 # ShopSmarter: AI Personal Shopper
 
-**Live Application Link (Hosted on Google Cloud Run):** [Link To App](https://shopsmarter-ai-personal-shopper-570474786910.us-west1.run.app)
-
 Welcome to ShopSmarter AI! This application is an intelligent personal shopping assistant designed to help you discover products based on visual inspiration. Upload an image, and our AI will analyze it to suggest similar items and complementary products. You can then chat with the AI to refine your search, ask for alternatives, or get style advice.
 
 **(Note: This project is currently in development. Features and functionality are actively being enhanced.)**
@@ -40,48 +38,34 @@ ShopSmarter leverages the power of Google's Gemini AI to provide a unique shoppi
 | Direct links to purchase suggested items      |        |       ❌       | Placeholder products do not link to actual e-commerce sites          |
 | Saving/Favoriting items for later             |        |       ❌       | No functionality to save or bookmark items                            |
 
-## Setup and Running
+## Running Locally
 
-To run ShopSmarter AI locally, follow these steps:
+This project is not currently hosted anywhere; run it on your own machine:
 
-1.  **Prerequisites**:
-    *   A modern web browser that supports ES6 modules.
-    *   A local HTTP server to serve the `index.html` file. Common options include:
-        *   Node.js: `npx serve .` (run from the project root directory)
-        *   Python 3: `python3 -m http.server` or `python -m http.server` (run from the project root directory)
-        *   Using a VS Code extension like "Live Server".
-
-2.  **Get a Google Gemini API Key**:
-    *   You'll need an API key for Google's Gemini API. You can obtain one from [Google AI Studio](https://aistudio.google.com/app/apikey).
-
-3.  **Set Up Environment Variable**:
-    *   The application requires the Gemini API key to be available as an environment variable named `API_KEY`.
-    *   **Before starting your local HTTP server**, set this environment variable in your terminal session:
-        *   On macOS/Linux:
-            ```bash
-            export API_KEY="YOUR_GEMINI_API_KEY_HERE"
-            ```
-        *   On Windows (Command Prompt):
-            ```bash
-            set API_KEY="YOUR_GEMINI_API_KEY_HERE"
-            ```
-        *   On Windows (PowerShell):
-            ```powershell
-            $env:API_KEY="YOUR_GEMINI_API_KEY_HERE"
-            ```
-    *   **Important**: Replace `"YOUR_GEMINI_API_KEY_HERE"` with your actual API key.
-    *   The application code (`geminiService.ts`) directly attempts to read `process.env.API_KEY`. Your local development environment or server must make this variable accessible to the JavaScript context where the Gemini API client is initialized. If you are using a simple static file server that only serves files without processing them, this method of accessing environment variables (`process.env.API_KEY`) will not work directly in client-side JavaScript. This setup assumes an environment where `process.env.API_KEY` is made available to the JavaScript runtime (e.g., through a build process or a server-side templating mechanism, which are not part of the current simple file structure).
-
-4.  **Serve the Application**:
-    *   Navigate to the project's root directory in your terminal.
-    *   Start your chosen HTTP server. For example, using `npx serve`:
-        ```bash
-        npx serve .
+1.  **Prerequisites:** Node.js (v18+) and npm.
+2.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/ishaanseth/ShopSmarter-AI.git
+    cd ShopSmarter-AI
+    ```
+3.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
+4.  **Set up your Gemini API key:**
+    *   Get a key from [Google AI Studio](https://aistudio.google.com/app/apikey).
+    *   Create a file named `.env.local` in the project root containing:
         ```
-    *   The server will typically output a local URL (e.g., `http://localhost:3000`, `http://localhost:5000` or `http://localhost:8000`).
+        GEMINI_API_KEY=your_gemini_api_key
+        ```
+    *   Vite injects this into the app at build time as `process.env.API_KEY`.
+5.  **Start the development server:**
+    ```bash
+    npm run dev
+    ```
+    Open the local URL Vite prints (usually `http://localhost:5173`).
 
-5.  **Open in Browser**:
-    *   Open the provided local URL in your web browser to use ShopSmarter AI.
+To create a production build instead, run `npm run build` and serve the `dist/` folder with `npm run preview`.
 
 ---
 
