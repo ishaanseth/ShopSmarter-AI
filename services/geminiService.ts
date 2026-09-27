@@ -142,7 +142,7 @@ export const analyzeImageAndSuggestProducts = async (
   userPrompt?: string
 ): Promise<GeminiAnalysisResponse> => {
   try {
-    const model = 'gemini-2.5-flash-preview-04-17'; 
+    const model = 'gemini-2.5-flash'; 
     
     const imagePart: Part = {
       inlineData: {
@@ -217,7 +217,7 @@ export const analyzeImageAndSuggestProducts = async (
 
 export const startChatSession = (): Chat => {
   return ai.chats.create({
-    model: 'gemini-2.5-flash-preview-04-17',
+    model: 'gemini-2.5-flash',
     config: {
       systemInstruction: `You are ShopSmarter, a friendly and helpful AI personal shopping assistant. 
       Your goal is to help users find products based on their uploaded images and subsequent requests. 
